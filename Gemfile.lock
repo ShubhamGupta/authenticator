@@ -1,4 +1,10 @@
 PATH
+  remote: engines/admin
+  specs:
+    admin (0.0.1)
+      rails (~> 3.2.14)
+
+PATH
   remote: engines/auth
   specs:
     auth (0.0.1)
@@ -45,6 +51,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    columnize (0.3.6)
+    debugger (1.6.2)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.3)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -121,8 +134,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  admin!
   auth!
   coffee-rails (~> 3.2.1)
+  debugger
   devise
   jquery-rails
   mysql2

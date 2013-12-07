@@ -3,6 +3,7 @@ Authenticator::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   mount Auth::Engine => '/', as: :auth
+  mount Admin::Engine => '/admin', as: :admin
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

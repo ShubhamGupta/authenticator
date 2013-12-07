@@ -23,7 +23,8 @@ end
 gem 'jquery-rails'
 gem 'devise'
 gem 'auth', path: 'engines/auth'
-
+gem 'admin', path: 'engines/admin'
+gem 'debugger'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
