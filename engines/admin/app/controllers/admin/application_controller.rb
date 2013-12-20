@@ -2,7 +2,6 @@ module Admin
   class ApplicationController < ActionController::Base
     before_filter :restrict_aliens
 
-
     private
 
       def restrict_aliens

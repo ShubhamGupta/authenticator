@@ -20,6 +20,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem "paperclip", "~> 3.5.2"
+
 gem 'jquery-rails'
 gem 'devise'
 gem 'auth', path: 'engines/auth'

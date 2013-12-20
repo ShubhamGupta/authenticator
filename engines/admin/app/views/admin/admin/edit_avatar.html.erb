@@ -1,0 +1,33 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.Jcrop.min' %>
+  <%= stylesheet_link_tag 'jquery.Jcrop' %>
+<% end %>
+
+<h1>
+  Go Ahead And Crop the Image as you like.
+</h1>
+
+<%= image_tag @user.avatar.url(:medium), id: 'cropbox' %>
+
+<script>
+  $(function(){
+    $('#cropbox').Jcrop({
+      onChange: update_crop,
+      onSelect: update_crop
+    });
+  });
+
+  function update_crop(coords){
+    $('#crop_x').val(coords.x);
+    $('#crop_y').val(coords.y);
+    $('#crop_h').val(coords.h);
+    $('#crop_w').val(coords.w);
+  }
+</script>
+
+<%= form_for @user do |f| %>
+  <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+    <%= f.hidden_field attribute, :id => attribute %>
+  <% end %>
+  <p><%= f.submit "Crop" %></p>
+<% end %>

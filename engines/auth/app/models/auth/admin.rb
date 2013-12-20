@@ -6,7 +6,9 @@ module Auth
            :recoverable, :rememberable, :trackable, :validatable
   
     # Setup accessible (or protected) attributes for your model
-    attr_accessible :email, :password, :password_confirmation, :remember_me
-    # attr_accessible :title, :body
+    attr_accessible :email, :password, :password_confirmation, :remember_me, :avatar
+    attr_accessor :crop_x, :crop_y, :crop_h, :crop_w
+
+    has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   end
 end

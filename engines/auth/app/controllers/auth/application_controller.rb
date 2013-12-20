@@ -6,5 +6,9 @@ module Auth
       ::Admin::Engine.routes.url_helpers.root_path if signed_in_resource.kind_of? Auth::Admin
     end
 
+    def after_sign_out_path_for(resource)
+      admin.root_path
+    end
+
   end
 end
